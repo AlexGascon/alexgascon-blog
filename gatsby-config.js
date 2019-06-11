@@ -24,6 +24,15 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `mandali`,
+          `roboto`,
+        ]
+      },
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
