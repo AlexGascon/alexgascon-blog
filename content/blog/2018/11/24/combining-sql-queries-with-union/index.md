@@ -1,6 +1,6 @@
 ---
 title: Combining SQL queries with UNION
-excerpt: Learn how to combine different SQL queries in a single operation using the UNION statement
+description: Learn how to combine different SQL queries in a single operation using the UNION statement
 date: "2018-11-24T00:00:00.0000Z"
 tags: sql, beginners, programming, databases
 ---

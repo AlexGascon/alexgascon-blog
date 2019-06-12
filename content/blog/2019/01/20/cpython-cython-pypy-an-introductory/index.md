@@ -1,6 +1,6 @@
 ---
 title: CPython, Cython, PyPy... An introductory guide to the different Python variants
-excerpt: A small introduction to some of the different variants of Python
+description: A small introduction to some of the different variants of Python
 date: "2019-01-20T00:00:00.0000Z"
 tags: python, beginners, pypy, cython
 ---
