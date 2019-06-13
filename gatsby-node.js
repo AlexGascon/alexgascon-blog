@@ -56,7 +56,8 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
   if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
+    const pathComponents = createFilePath({ node, getNode }).split('/')
+    const value = pathComponents[pathComponents.length - 2]
     createNodeField({
       name: `slug`,
       node,
