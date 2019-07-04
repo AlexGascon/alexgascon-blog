@@ -30,7 +30,8 @@ function Bio() {
               style={{
                 marginRight: rhythm(1 / 2),
                 marginBottom: 0,
-                minWidth: 50,
+                minWidth: 150,
+                minHeight: 150,
                 borderRadius: `100%`,
               }}
               imgStyle={{
@@ -38,11 +39,9 @@ function Bio() {
               }}
             />
             <p>
-              Written by <strong>{author}</strong> who lives and works in Dublin building useful things.
-              {` `}
-              <a href={`https://twitter.com/${social.twitter}`}>
-                You should follow him on Twitter
-              </a>
+              Software Development Engineer @ AWS<br/>
+              Python, Ruby, Elixir // Scalability, Distributed Systems<br/>
+              Interested in self-improvement, leadership and management<br/>
             </p>
           </div>
         )
@@ -55,7 +54,7 @@ const bioQuery = graphql`
   query BioQuery {
     avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
       childImageSharp {
-        fixed(width: 50, height: 50) {
+        fixed(width: 150, height: 150) {
           ...GatsbyImageSharpFixed
         }
       }
