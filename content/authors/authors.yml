@@ -1,0 +1,14 @@
+- name: Alex Gascon
+  bio: >
+    Software Development Engineer @ AWS CloudWatch
+
+    Python, Ruby, Elixir - Scalability, Distributed Systems
+
+    Interested in self-improvement and leadership
+  avatar: ./avatars/profile-pic.jpg
+  featured: true
+  social:
+    - name: twitter
+      url: https://twitter.com/AlexGasconB
+    - name: github
+      url: https://github.com/AlexGascon
