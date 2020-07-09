@@ -22,6 +22,13 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: `UA-90744232-2`,
+        head: true,
+      },
+    },
+    {
       resolve: '@narative/gatsby-theme-novela',
       options: {
         authorsPage: true,
@@ -50,12 +57,6 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
-      },
-    },
     `gatsby-plugin-offline`,
   ],
 }
