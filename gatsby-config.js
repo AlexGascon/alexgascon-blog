@@ -22,13 +22,6 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: `UA-90744232-2`,
-        head: true,
-      },
-    },
-    {
       resolve: '@narative/gatsby-theme-novela',
       options: {
         authorsPage: true,
@@ -54,6 +47,17 @@ module.exports = {
         path: `${__dirname}/content/assets`,
         name: `assets`,
       },
+    },
+    {
+      resolve: `gatsby-plugin-gdpr-cookies`,
+      options: {
+        googleAnalytics: {
+          trackingId: 'UA-90744232-2',
+          cookieName: 'gatsby-gdpr-google-analytics',
+          anonymize: true,
+          allowAdFeatures: false
+        },
+      }
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
