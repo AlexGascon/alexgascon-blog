@@ -6,42 +6,25 @@ hero: ./verde.png
 date: 2021-10-10
 ---
 
-David Bonilla ha publicado hoy un post muy interesante en su #Bonilista, sobre el impacto energético de nuestro código
-
-https://mailchi.mp/bonillaware/energia-codigo?e=1faa572978
-
-Da la casualidad de que es algo que he vivido de cerca en AWS, así que quiero compartir mi experiencia dado que puede ayudar a cualquiera que trabaje con software:
+David Bonilla ha publicado hoy [un post muy interesante en su #Bonilista](https://mailchi.mp/bonillaware/energia-codigo?e=1faa572978), sobre el impacto energético de nuestro código. Da la casualidad de que es algo que he vivido de cerca en AWS, así que quiero compartir mi experiencia dado que puede ayudar a cualquiera que trabaje con software:
 
 **TL;DR: tienes MUCHAS opciones sin cambiar de lenguaje**
 
+---
 
-Para dar contexto: CloudWatch es uno de los servicios más grandes de AWS, así que como os podéis imaginar la cantidad de tráfico que gestionábamos era inmensa
-
-Como es lógico, para gestionar una cantidad de tráfico enorme, necesitas una cantidad de servidores también enorme
-
-Por ello, en los últimos tiempos pusimos mucho el foco en la eficiencia de nuestros servicios
+Para dar contexto: CloudWatch es uno de los servicios más grandes de AWS, así que como os podéis imaginar la cantidad de tráfico que gestionábamos era inmensa. Como es lógico, para gestionar una cantidad de tráfico enorme, necesitas una cantidad de servidores también enorme. Por ello, en los últimos tiempos pusimos mucho el foco en la eficiencia de nuestros servicios
 
 Cuando sirves tantísimo tráfico cualquier mejora, aunque sea pequeña en porcentaje, termina teniendo un efecto absoluto muy grande. Mejorar en esto era un objetivo general de mi área
 
-No puedo dar números exactos, pero sí que en varios servicios hubo cambios con mejoras de eficiencia > 10% (algunas, mucho mayores)
+No puedo dar números exactos, pero sí que en varios servicios hubo cambios con mejoras de eficiencia > 10% (algunas, mucho mayores). En ningún momento tuvimos que cambiar de lenguaje, ni reescribir servicios. Algunos de esos cambios no requerían más de 20 líneas de código
 
-En ningún momento tuvimos que cambiar de lenguaje, ni reescribir servicios. Algunos de esos cambios no requerían más de 20 líneas de código
+Al final, la clave es **mirar en qué estás gastando tu tiempo de cómputo**, y preguntarte si hay opciones mejores o incluso si te hace falta eso. ¿Hay procesos que estés repitiendo? ¿Hay procesos que puedan ejecutarse de forma distinta? ¿Hay procesos que no haría falta ejecutar?
 
-Al final, la clave es mirar en qué estás gastando tu tiempo de cómputo, y preguntarte si hay opciones mejores o incluso si te hace falta eso
+Por ejemplo, piensa en ordenar un array: ordenarlo por fuerza bruta en C puede ser más eficiente que ordenarlo por fuerza bruta en Ruby, no te digo que no. **Pero un algoritmo malo va a ser malo en Ruby, en C o en el lenguaje que quieras. Así que céntrate en mejorar eso**
 
-¿Hay procesos que estés repitiendo? ¿Hay procesos que puedan ejecutarse de forma distinta? ¿Hay procesos que no haría falta ejecutar?
+En mi equipo y otros de mi área, encontramos muchísimas optimizaciones simplemente metiendo un Profiler y analizando dónde pasa el tiempo el código. ¿Es lo que esperamos o hay alguna sorpresa? Tal vez algo que se ejecuta muchas veces, o donde se pasa mucho tiempo sin necesitarlo
 
-Por ejemplo, piensa en ordenar un array: ordenarlo por fuerza bruta en C puede ser más eficiente que ordenarlo por fuerza bruta en Ruby, no te digo que no
-
-Pero un algoritmo malo va a ser malo en Ruby, en C o en el lenguaje que quieras. Así que céntrate en mejorar eso.
-
-En mi equipo y otros de mi área, encontramos muchísimas optimizaciones simplemente metiendo un Profiler y analizando dónde pasa el tiempo el código
-
-¿Es lo que esperamos o hay alguna sorpresa? Tal vez algo que se ejecuta muchas veces, o donde se pasa mucho tiempo sin necesitarlo
-
-Muchas veces cuando nos da la sensación de que nuestra aplicación es lenta o ineficiente le echamos la culpa al lenguaje, o a las librerías
-
-Pero igual habría que dejar de echar balones fuera y empezar a mirar dentro. Siempre va a haber cosas que mejorar, ¡o incluso que quitar!
+Muchas veces cuando nos da la sensación de que nuestra aplicación es lenta o ineficiente le echamos la culpa al lenguaje, o a las librerías. Pero igual habría que dejar de echar balones fuera y empezar a mirar dentro. Siempre va a haber cosas que mejorar, ¡o incluso que quitar!
 
 Así que, en resumen:
 
@@ -53,4 +36,4 @@ O puedes pasar unas semanas instrumentando tu código, analizando de verdad qué
 
 _Este post es una adaptación de un hilo de Twitter que hice. Puedes ver el original empezando por el siguiente tweet:_
 
-<blockquote class="twitter-tweet"><p lang="es" dir="ltr">Súper interesante <a href="https://twitter.com/david_bonilla?ref_src=twsrc%5Etfw">@david_bonilla</a> hoy con su <a href="https://twitter.com/hashtag/Bonilista?src=hash&amp;ref_src=twsrc%5Etfw">#Bonilista</a>, sobre el impacto energético de nuestro código<a href="https://t.co/NfLR4af1YI">https://t.co/NfLR4af1YI</a><br/><br/>Da la casualidad de que es algo que he vivido de cerca en AWS, así que hilo con mi impresión 👇🧵<br/><br/>TL;DR: tienes MUCHAS opciones sin cambiar de lenguaje</p>&mdash; Alex Gascón Bononad (on vacation 🏝 ) (@AlexGasconB) <a href="https://twitter.com/AlexGasconB/status/1444724331054051330?ref_src=twsrc%5Etfw">October 3, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet tw-align-center"><p lang="es" dir="ltr">Súper interesante <a href="https://twitter.com/david_bonilla?ref_src=twsrc%5Etfw">@david_bonilla</a> hoy con su <a href="https://twitter.com/hashtag/Bonilista?src=hash&amp;ref_src=twsrc%5Etfw">#Bonilista</a>, sobre el impacto energético de nuestro código<a href="https://t.co/NfLR4af1YI">https://t.co/NfLR4af1YI</a><br/><br/>Da la casualidad de que es algo que he vivido de cerca en AWS, así que hilo con mi impresión 👇🧵<br/><br/>TL;DR: tienes MUCHAS opciones sin cambiar de lenguaje</p>&mdash; Alex Gascón Bononad (on vacation 🏝 ) (@AlexGasconB) <a href="https://twitter.com/AlexGasconB/status/1444724331054051330?ref_src=twsrc%5Etfw">October 3, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
