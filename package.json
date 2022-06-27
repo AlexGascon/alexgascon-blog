@@ -30,7 +30,7 @@
     "gatsby-source-filesystem": "^2.0.38",
     "gatsby-transformer-remark": "^2.3.12",
     "gatsby-transformer-sharp": "^2.1.21",
-    "prismjs": "^1.16.0",
+    "prismjs": "^1.27.0",
     "react": "^16.13.1",
     "react-cookie-consent": "^6.4.1",
     "react-dom": "^16.13.1",
